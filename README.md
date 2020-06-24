@@ -2,4 +2,4 @@
 
 ## Objetivo
 
-Esse repositorio tem os exercicios e desafios de um curso de JavaScripit.
+Esse repositorio possui os exercicios e desafios de um curso de JavaScripit.
