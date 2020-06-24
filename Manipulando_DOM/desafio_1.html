@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <title> Desafio </title>
+    </head>
+    <body>
+        <div id="app">  
+           <div class = "box"></div>
+           <button class = "botao">Criar</button>
+        </div>
+            
+        <script>
+
+            function getRandomColor() {
+                var letters = "0123456789ABCDEF";
+                var color = "#";
+                for (var i = 0; i < 6; i++) {
+                    color += letters[Math.floor(Math.random() * 16)];
+                }
+                return color;
+            };
+
+            var buttomElement = document.querySelector('.botao');
+
+            buttomElement.style.width = 100;
+            buttomElement.style.height = 20;
+            buttomElement.style.backgroundColor = "#808080";
+
+            buttomElement.onclick = function creatBox(){
+                var boxElement = document.querySelector('.box');
+                //var boxElement = document.querySelector('.box');
+                console.log(boxElement);
+
+                boxElement.style.width = 100;
+                boxElement.style.height =100;
+                boxElement.onmouseover = function changeColor(){
+                    var newColor = getRandomColor();
+                    boxElement.style.backgroundColor = newColor;
+                }
+                
+            };
+
+        </script>
+    </body>
+</html>
