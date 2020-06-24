@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <title> Desafio </title>
+    </head>
+    <body>
+        <ul class = "listName"> </ul>
+        <input type="text" name="nome">
+        <button id="botao"></button>Adicionar</button>    
+        <script>
+            var names = ["Diego", "Gabriel", "Lucas"];
+
+            var listShow = document.querySelector(".listName");
+            var buttomElemet = document.getElementById("botao");
+
+            buttomElemet.onclick = function addName(){
+                var newName = document.getElementsByName("nome");
+                var text = newName.value;
+                listShow.append(text);
+                console.log(names);1
+            }
+            for(var i=0;i<names.length;i++){
+                
+                listShow.append(names[i]);
+                listShow.append('\n');
+            }
+               
+        </script>
+    </body>
+</html>
