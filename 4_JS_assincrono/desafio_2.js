@@ -28,6 +28,15 @@ function renderUsers(){
     }
 }
 
+function loadRepos(){
+    var loadElement = document.createElement("li");
+    var loadtext = document.createTextNode("Carregando ...");
+    
+    loadElement.appendChild(loadtext);
+    listElement.appendChild(loadElement);
+
+}
+
 renderUsers();
 
 function adduserGit(){
@@ -38,7 +47,17 @@ function adduserGit(){
     axios.get('https://api.github.com/users/'+userGit+'/repos')
     
     .then(function(response){
-        console.log(response);
+        loadRepos();
+        setTimeout(
+            function(){
+                for (resp of response.data){
+                    console.log(resp.name);
+                    reposGit.push(resp.name);
+                }
+                renderUsers();
+            },1000
+        )
+        console.log (reposGit);
     })
     .catch(function(error){
         alert("nome de usuário não encotrado")
@@ -53,3 +72,4 @@ buttonElement.onclick = adduserGit;
 function saveStorage(){
     localStorage.setItem('listreposGit', JSON.stringify(reposGit));
 }
+
